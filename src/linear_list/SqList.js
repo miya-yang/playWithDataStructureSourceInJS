@@ -4,16 +4,28 @@
  * @author Miyang
  * @version 1.0
  */
+
+const _MAXSIZE = 20
 class SqList {
   constructor () {
     this.dataList = []
-    this.MAXSIZE = 20
+    this.MAXSIZE = _MAXSIZE
+    this.e = null
+  }
+
+  /**
+   * @name ListInit
+   * @description 初始化操作，建立一个空的顺序表
+   */
+  InitList () {
+    this.dataList = []
+    this.MAXSIZE = _MAXSIZE
     this.e = null
   }
 
   /**
    * @name ListEmpty
-   * @description 判断顺序表是否为空 为空返回true 否则返回false
+   * @description 若顺序表为空，返回true 否则返回false
    * @returns { Boolean } 顺序表是否为空
    */
   ListEmpty () {
@@ -21,6 +33,38 @@ class SqList {
       return true
     }
     return false
+  }
+
+  /**
+   * @name ClearList
+   * @description 将顺序表清空
+   */
+  ClearList () {
+    this.dataList = []
+    this.e = null
+  }
+
+  /**
+   * @name LocateElem
+   * @param { Object } e 查找的元素 e
+   * @returns { Number } 如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败
+   */
+  LocateElem (e) {
+    for (let i = 0; i < this.dataList.length; i++) {
+      if (this.dataList[i] === e) {
+        return i + 1
+      }
+    }
+    return 0
+  }
+
+  /**
+   * @name ListLength
+   * @description 返回顺序表的元素个数
+   * @returns { Number } 顺序表的元素个数
+   */
+  ListLength () {
+    return this.dataList.length
   }
 
   /**
@@ -77,10 +121,14 @@ class SqList {
   }
 }
 
-// test
+// Test Case
 let list = new SqList()
-console.log(list.ListInsert(1, 666))
-console.log(list.GetElem(1))
+list.ListInsert(1, 666)
+list.GetElem(1)
 console.log(list.e)
-console.log(list.ListDelete(1))
+console.log(list.LocateElem(666))
+list.ListDelete(1)
 console.log(list.e)
+list.InitList()
+console.log(list.e)
+console.log(list.ListLength())
