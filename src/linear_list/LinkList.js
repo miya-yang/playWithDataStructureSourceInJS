@@ -102,7 +102,7 @@ class LinkList {
   /**
    * @name CreateListHead
    * @description 随机产生 n 个元素的值，建立带表头结点的单链线性表 L （头插法）
-   * @param { Number } n 随机产生 n 个元素的值 
+   * @param { Number } n 随机产生 n 个元素的值
    */
   CreateListHead(n) {
     // 计数器
@@ -122,7 +122,7 @@ class LinkList {
    * @description 随机产生 n 个元素的值，建立带表头结点的单链线性表L（尾插法）
    * @param { Number } n 随机产生 n 个元素的值
    */
-  CreateListTail (n) {
+  CreateListTail(n) {
     let i = 0
     let r = this.head
     for (let i = 0; i < n; i++) {
@@ -140,7 +140,7 @@ class LinkList {
    * @name ClearList
    * @description 将单链表重置为空表
    */
-  ClearList () {
+  ClearList() {
     let p, q
     p = this.head.next
     while (p) {
@@ -168,7 +168,7 @@ console.log('======')
 let list2 = new LinkList()
 list2.CreateListHead(5)
 console.log(list2.length)
-for(let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 5; i++) {
   list2.GetElem(i)
   console.log(list2.e)
 }
@@ -176,7 +176,7 @@ console.log('======')
 let list3 = new LinkList()
 list3.CreateListTail(5)
 console.log(list3.length)
-for(let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 5; i++) {
   list3.GetElem(i)
   console.log(list3.e)
 }

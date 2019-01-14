@@ -7,7 +7,7 @@
 
 const _MAXSIZE = 20
 class SqList {
-  constructor () {
+  constructor() {
     this.dataList = []
     this.MAXSIZE = _MAXSIZE
     this.e = null
@@ -17,7 +17,7 @@ class SqList {
    * @name ListInit
    * @description 初始化操作，建立一个空的顺序表
    */
-  InitList () {
+  InitList() {
     this.dataList = []
     this.MAXSIZE = _MAXSIZE
     this.e = null
@@ -28,8 +28,8 @@ class SqList {
    * @description 若顺序表为空，返回true 否则返回false
    * @returns { Boolean } 顺序表是否为空
    */
-  ListEmpty () {
-    if(this.dataList instanceof Array && this.dataList.length === 0) {
+  ListEmpty() {
+    if (this.dataList instanceof Array && this.dataList.length === 0) {
       return true
     }
     return false
@@ -39,7 +39,7 @@ class SqList {
    * @name ClearList
    * @description 将顺序表清空
    */
-  ClearList () {
+  ClearList() {
     this.dataList = []
     this.e = null
   }
@@ -49,7 +49,7 @@ class SqList {
    * @param { Object } e 查找的元素 e
    * @returns { Number } 如果查找成功，返回该元素在表中序号表示成功；否则，返回0表示失败
    */
-  LocateElem (e) {
+  LocateElem(e) {
     for (let i = 0; i < this.dataList.length; i++) {
       if (this.dataList[i] === e) {
         return i + 1
@@ -63,7 +63,7 @@ class SqList {
    * @description 返回顺序表的元素个数
    * @returns { Number } 顺序表的元素个数
    */
-  ListLength () {
+  ListLength() {
     return this.dataList.length
   }
 
@@ -73,7 +73,7 @@ class SqList {
    * @param { Number } i 第 i 个元素
    * @returns { Boolean } 获取成功返回 true 并且 e 为获取的数据元素，否则返回 false
    */
-  GetElem (i) {
+  GetElem(i) {
     if (this.dataList.length === 0 || i < 1 || i > this.dataList.length) {
       return false
     }
@@ -88,7 +88,7 @@ class SqList {
    * @param { Object } e 插入的元素
    * @returns { Boolean } 插入成功返回 true ，否则返回 false
    */
-  ListInsert (i, e) {
+  ListInsert(i, e) {
     // 顺序表已经满
     if (this.dataList.length === this.MAXSIZE) {
       return false
@@ -107,7 +107,7 @@ class SqList {
    * @param { Number } i 第 i 个位置
    * @returns { Boolean } 删除成功返回 true ，否则返回 false
    */
-  ListDelete (i) {
+  ListDelete(i) {
     // 线性表为空
     if (this.dataList.length === 0) {
       return false
