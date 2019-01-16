@@ -1,6 +1,6 @@
 /**
  * @name 顺序栈（栈的顺序存储结构）
- * @description 这里模拟了初始存储空间分配量为5的顺序表
+ * @description 这里模拟了初始存储空间分配量为5的顺序栈
  * @author Miyang
  * @version 1.0
  */
