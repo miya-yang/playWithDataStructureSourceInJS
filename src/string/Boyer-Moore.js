@@ -3,6 +3,8 @@
  * @description 这里仅使用坏字符，好后缀暂时未使用
  * @author Miyang
  * @version 1.0
+ * @param { String } str 主串
+ * @param { String } subStr 子串
  */
 function BoyerMoore(str, subStr) {
   let i = 0
@@ -26,7 +28,14 @@ function BoyerMoore(str, subStr) {
   return -1
 }
 
-// 坏字符后移位数
+/**
+ * @name BadCharShift
+ * @description 坏字符后移位数
+ * @param { ch } String 坏字符
+ * @param { subStr } String 子串
+ * @param { chIndex } Number 坏字符位置
+ * @returns { Number } 坏字符后移位数
+ */
 function BadCharShift(ch, subStr, chIndex) {
   for (let i = subStr.length - 1; i >= 0; i--) {
     if (ch === subStr[i]) {
